@@ -1,0 +1,2276 @@
+/* ========== VARIABLES GLOBALES ========== */
+:root {
+  /* Colores */
+  --dark-blue: #1e1b4b;
+  /* Azul marino púrpura */
+  --secondary-color: #6366f1;
+  /* Índigo médico */
+  --primary-color: #a78bfa;
+  /* Lila vibrante */
+  --accent-color: #ddd6fe;
+  /* Lila muy claro */
+  --light-blue: #fefefe;
+  /* Casi blanco */
+  --background-blue: #faf5ff;
+  /* Fondo lila suave */
+
+  /* Tipografías */
+
+  --font-title: 'Bebas neue', sans-serif;
+  --font-logo: 'Nunito Sans', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Espaciado */
+  --spacing-xs: 6px;
+  /*espaciado extra pequeño*/
+  --spacing-sm: 10px;
+  /*espaciado pequeño*/
+  --spacing-md: 16px;
+  /*espaciado mediano*/
+  --spacing-lg: 30px;
+  /*espaciado grande*/
+
+  /* Breakpoints */
+  --breakpoint-sm: 768px;
+}
+
+*/
+
+/* ========== RESET Y BASE ========== */
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+/* ========== HEADER ========== */
+/* ===== NAVBAR STICKY MODERNO - VITAX ===== */
+
+body {
+  width: 100%;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+  background: rgb(255, 255, 255) !important;
+  /* Fondo blanco para todo el cuerpo */
+  margin: 0;
+  padding: 0 !important;
+}
+
+/* ===== HEADER STICKY CON GRADIENTE Y BLUR ===== */
+.header {
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0;
+  background: linear-gradient(135deg, var(--background-blue) 0%, var(--primary-color) 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-text h1 {
+  font-family: var(--font-logo);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.brand-text p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== RESPONSIVE AJUSTES ===== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: left;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ========== quienes somos  SECTION ========== */
+
+.hero-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* centra horizontalmente */
+  height: 200px;
+  /* ajusta altura según lo que necesites */
+  padding: 0;
+  background-image: url("/static/img/qs.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  /* opcional, para igualar estilo */
+  overflow: hidden;
+}
+
+
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/static/img/qs.jpg");
+  /* Asegúrate que esta es la imagen correcta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Capa azul semitransparente */
+  background-color: rgba(159, 108, 166, 0.606);
+  /* azul Bootstrap con opacidad */
+  background-blend-mode: overlay;
+  z-index: 1;
+
+}
+
+/* Texto encima de la imagen */
+.hero-content {
+  color: whitesmoke;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  color: whitesmoke;
+  margin-top: 0.5rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /*para mejor visibilidad sombra*/
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+
+/* ==========INICIO SECTION ========== */
+
+/* ========== MAIN CONTENT ========== */
+.content-container {
+  background-color: white;
+  margin: 2rem auto;
+
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1200px;
+}
+
+/* ========== MAIN CONTENT ========== */
+.content-container {
+  background-color: white;
+  margin: 2rem auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1200px;
+
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: rgb(101, 164, 206);
+  margin-bottom: 1.5rem;
+}
+
+/* ========== INFO CARDS ========== */
+.info-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* espacio entre texto e imagen */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* sutil sombra */
+  margin-top: 2rem;
+  /* espacio entre tarjetas */
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card--reverse {
+  flex-direction: row-reverse;
+}
+
+.info-text {
+  padding: var(--spacing-md);
+  flex: 1;
+}
+
+.info-image {
+  width: 400px;
+  /* puedes ajustar este tamaño */
+  height: 300px;
+  /* ahora controlas altura fija del contenedor */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-image img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* opcional: para recorte uniforme */
+  border-radius: 0;
+  /* quita bordes si tu imagen los tiene */
+}
+
+.info-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: rgb(101, 164, 206);
+}
+
+.info-subtitle {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.transmission-list {
+  padding-left: 20px;
+}
+
+.transmission-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* ========== CARD ESTILO GENERAL ========== */
+.card {
+  border: none;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  font-weight: 600;
+  padding: 12px 20px;
+}
+
+/* ========== BOTONES ========== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #1a3a6d 100%);
+  transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: var(--breakpoint-sm)) {
+  .main-nav {
+    margin-top: var(--spacing-sm);
+  }
+
+  .info-card,
+  .info-card--reverse {
+    flex-direction: column;
+  }
+
+  .info-image {
+    width: 100%;
+    height: 120px;
+  }
+
+  .hero-section {
+    padding: 40px 0;
+  }
+
+  .header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ========== FOOTER ========== */
+.main-footer {
+  background-color: #5079a1;
+  ;
+  color: white;
+  padding: var(--spacing-md) 0;
+  text-align: center;
+}
+
+.cta-alert {
+  background-color: #5079a1;
+  /* azul oscuro como base */
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: justify;
+  /* 👈 justifica el texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  /* el título sí centrado */
+}
+
+.cta-text p {
+  text-align: justify;
+  /* 👈 texto del párrafo justificado */
+  line-height: 1.6;
+}
+
+.cta-button .cta-btn {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button .cta-btn:hover {
+  background-color: #e6b800;
+}
+
+
+
+
+/*recursos */
+/*recursos*/
+/*PARTE DE HOSPITALES Y CLINICAS/*
+    /* Estilos para la sección de hospitales */
+/* General Body Styles */
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #050505;
+
+  background-color: #c5c4c4;
+  background-position: top center, bottom center;
+  background-size: 100% auto, 100% auto;
+  background-attachment: fixed, fixed;
+}
+
+/* ... el resto de tu CSS (sin cambios en este aspecto) ... */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center center;
+    /* Si usas una sola imagen para móvil, la ruta también necesitará '../imagenes/' */
+    background-image: url('../imagenes/fondo-movil.png');
+    /* Asegúrate de tener esta imagen si la usas */
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Para la transparencia en el fondo de las secciones */
+/* Hacemos que el main tenga un fondo semi-transparente para ver la imagen de fondo del body */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  /* Fondo blanco con 85% de opacidad (15% transparente) */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Asegurarse que el contenido del main esté por encima del fondo del body */
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Fondo semi-transparente para el header también */
+  padding-top: 10px;
+  /* Ajuste si es necesario */
+  border-radius: 8px 8px 0 0;
+  /* Bordes superiores redondeados */
+}
+
+header h1 {
+  color: #2f7bbd;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Common Section Container Styling */
+.section-container {
+  margin-bottom: 50px;
+  /* Space between sections */
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  /* Light separator */
+}
+
+.section-container:first-of-type {
+  border-top: none;
+  /* No top border for the very first section */
+}
+
+.section-container h2 {
+  color: #062341;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.section-container .description {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Cards Container Styles */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Card Styles */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Las tarjetas también con un poco de transparencia */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  position: relative;
+  height: 150px;
+  /* Adjust height as needed */
+  overflow: hidden;
+  background-color: #eee;
+  /* Placeholder for background if image not loaded */
+}
+
+.card-header .background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image covers the area */
+  display: block;
+}
+
+.card-header .overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(100, 98, 98, 0.6);
+  /* Semi-transparent black background */
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  /* Allows buttons to wrap to next line if space is limited */
+}
+
+.card-body button {
+  background-color: #59c1c9;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  /* Aumentado el padding para que el redondeo se vea mejor */
+  border-radius: 20px;
+  /* --- CAMBIO AQUÍ: Más redondeado --- */
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Añadida una pequeña transformación */
+}
+
+.card-body button:hover {
+  background-color: #01152b;
+  transform: translateY(-2px);
+  /* Pequeño efecto al pasar el ratón */
+}
+
+.card-body p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+/* Specific Link/Video Styles for buttons/links */
+.card-body .map-link,
+.card-body .link-guide,
+.card-body .video-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #082544;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+  /* Align link to the start of the flex container */
+}
+
+.card-body .map-link:hover,
+.card-body .link-guide:hover,
+.card-body .video-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Empty Card (for future content) */
+.empty-card {
+  opacity: 0.7;
+  /* Slightly faded to indicate it's a placeholder */
+  border-style: dashed;
+}
+
+/* ... (Todo tu CSS existente ANTES de la sección .dia-vih-sida) ... */
+
+/* Estilos para la sección del Día Mundial contra el VIH/SIDA (AHORA SÍ, EL DISEÑO DEL BOCETO) */
+.dia-vih-sida {
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Fondo casi sólido */
+  padding: 30px 20px;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e7e7e7;
+  text-align: center;
+  /* Para centrar el contenido en caso de que no haya suficiente espacio para flex */
+}
+
+.dia-content-wrapper {
+  display: flex;
+  /* Habilitar Flexbox */
+  align-items: center;
+  /* Alinear verticalmente al centro */
+  justify-content: center;
+  /* Centrar el contenido horizontalmente */
+  gap: 30px;
+  /* Espacio entre las tres áreas */
+  max-width: 1000px;
+  /* Un ancho máximo para el contenedor interno */
+  margin: 0 auto;
+  /* Centrar el wrapper dentro de la sección */
+  flex-wrap: wrap;
+  /* Permitir que los elementos se envuelvan si la pantalla es muy pequeña */
+  padding: 10px;
+  /* Pequeño padding interno */
+}
+
+.dia-image-area {
+  flex-shrink: 0;
+  /* CAMBIO: Aumenta el tamaño base y el ancho máximo del área de la imagen */
+  flex-basis: 200px;
+  /* Por ejemplo, de 150px a 200px */
+  max-width: 200px;
+  /* De 150px a 200px */
+  height: 200px;
+  /* De 150px a 200px para que sea cuadrada */
+  /* FIN CAMBIO */
+
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente la imagen dentro de esta área */
+  align-items: center;
+  /* Centrar VERTICALMENTE la imagen dentro de esta área */
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dia-image {
+  max-width: 100%;
+  /* La imagen no se desbordará del nuevo tamaño del contenedor */
+  max-height: 100%;
+  object-fit: contain;
+
+}
+
+.dia-main-text-area {
+  flex-grow: 1;
+  /* Permite que este área ocupe el espacio restante */
+  text-align: center;
+  /* Centrar el texto dentro de este área */
+  min-width: 250px;
+  /* Ancho mínimo para que el texto no se comprima demasiado */
+  max-width: 400px;
+  /* Ancho máximo para el texto principal */
+}
+
+.dia-date {
+  display: block;
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: bold;
+  /* Hacer la fecha un poco más prominente */
+}
+
+.dia-title {
+  font-size: 2.5em;
+  /* Letra grande para el título principal */
+  color: #cc0000;
+  font-weight: bold;
+  line-height: 1.1;
+  /* Ajustar el espaciado entre líneas */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Opcional: Estilos para los botones si decides incluirlos */
+.dia-vih-sida .call-to-action {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dia-vih-sida .button-info {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dia-vih-sida .button-info:hover {
+  background-color: #990000;
+  transform: translateY(-2px);
+}
+
+/* Ajustes responsivos para esta sección */
+@media (max-width: 768px) {
+  .dia-content-wrapper {
+    flex-direction: column;
+    /* Apilar los elementos en pantallas pequeñas */
+    align-items: center;
+    /* Centrar elementos cuando están apilados */
+    gap: 15px;
+    /* Reducir el espacio entre elementos apilados */
+  }
+
+  .dia-image-area {
+    margin-bottom: 10px;
+    /* Espacio debajo de la imagen cuando está apilada */
+  }
+
+  .dia-main-text-area {
+    width: 100%;
+    /* Ocupar todo el ancho disponible */
+    max-width: 90%;
+    /* Un poco de margen en los lados */
+    text-align: center;
+    /* Centrar todo el texto en móviles */
+  }
+
+  .dia-title {
+    font-size: 1.8em;
+    /* Ajustar tamaño del título para móviles */
+  }
+}
+
+/* ... (El resto de tu CSS EXISTENTE) ... */
+/*estilos para el encabezado de recuros*/
+
+/*======== Recomendaciones section ========*/
+
+.intro-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: rgb(101, 164, 206);
+  margin-bottom: 1.5rem;
+}
+
+/* ========== TARJETAS GENERALES ========== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 16px 20px;
+  font-family: var(--font-body);
+}
+
+.card-body p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.card-body ul {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+.card-body ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ========== BOTONES ========== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #1a3a6d 100%);
+  transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+
+  .info-card,
+  .info-card--reverse {
+    flex-direction: column;
+  }
+
+  .info-image {
+    width: 100%;
+    height: 120px;
+  }
+
+  .hero-section {
+    padding: 40px 0;
+  }
+
+  .header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/*========= COMPARACIONES ======== */
+/* CONTENEDOR HORIZONTAL PARA VPH Y VIH */
+.info-row-horizontal {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ESTILO DE CADA BLOQUE INFORMATIVO */
+.info-visual .info-section {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--primary-color);
+  flex: 1 1 48%;
+  min-width: 300px;
+}
+
+/* CABECERA DEL BLOQUE */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.virus-name {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* TEXTO INTRODUCTORIO */
+.intro-text {
+  color: #374151;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* CONTENEDOR DE CÍRCULOS */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* CÍRCULO INDIVIDUAL */
+.stat-circle {
+  text-align: center;
+}
+
+/* BASE DEL CÍRCULO */
+.circle-bg {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GRADIENTES DE PORCENTAJE */
+.circle-bg.partial-100 {
+  background: conic-gradient(var(--primary-color) 0deg 360deg, #e5e7eb 360deg);
+}
+
+.circle-bg.partial-90 {
+  background: conic-gradient(#60d2aa 0deg 324deg, #e5e7eb 324deg 360deg);
+}
+
+.circle-bg.partial-85 {
+  background: conic-gradient(#3b82f6 0deg 306deg, #e5e7eb 306deg 360deg);
+}
+
+.circle-bg.partial-95 {
+  background: conic-gradient(#10b981 0deg 342deg, #e5e7eb 342deg 360deg);
+}
+
+/* CÍRCULO INTERNO */
+.circle-inner {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.stat-description {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: -10px;
+  text-align: center;
+}
+
+/* DISCLAMER GENERAL */
+.disclaimer {
+  background: #f1f5f9;
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.disclaimer-text {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: justify;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .info-row-horizontal {
+    flex-direction: column;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle-bg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .circle-inner {
+    width: 85px;
+    height: 85px;
+  }
+
+  .percentage {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========== FOOTER ========== */
+.main-footer {
+  width: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--background-blue));
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== CALL TO ACTION ========== */
+.cta-alert {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  height: 200px;
+  padding: 0rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.cta-text p {
+  text-align: justify;
+  line-height: 0.9;
+}
+
+.cta-button .cta-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--background-blue));
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button .cta-btn:hover {
+  background-color: #4f9da6;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/*recursos*/
+/*recursos*/
+/*PARTE DE HOSPITALES Y CLINICAS/*
+    /* Estilos para la sección de hospitales */
+/* General Body Styles */
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #050505;
+
+  background-color: #c5c4c4;
+  background-image:
+    /* CAMBIO CRUCIAL AQUÍ: Usa '../imagenes/' */
+    url('../imagenes/virus-vih.jpg'),
+    /* Primera imagen (arriba) */
+    url('../imagenes/carga-viral.jpg');
+  /* Segunda imagen (abajo) */
+  background-repeat: no-repeat, no-repeat;
+  background-position: top center, bottom center;
+  background-size: 100% auto, 100% auto;
+  background-attachment: fixed, fixed;
+}
+
+/* ... el resto de tu CSS (sin cambios en este aspecto) ... */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center center;
+    /* Si usas una sola imagen para móvil, la ruta también necesitará '../imagenes/' */
+    background-image: url('../imagenes/fondo-movil.png');
+    /* Asegúrate de tener esta imagen si la usas */
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Para la transparencia en el fondo de las secciones */
+/* Hacemos que el main tenga un fondo semi-transparente para ver la imagen de fondo del body */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  /* Fondo blanco con 85% de opacidad (15% transparente) */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Asegurarse que el contenido del main esté por encima del fondo del body */
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Fondo semi-transparente para el header también */
+  padding-top: 10px;
+  /* Ajuste si es necesario */
+  border-radius: 8px 8px 0 0;
+  /* Bordes superiores redondeados */
+}
+
+header h1 {
+  color: #2f7bbd;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Common Section Container Styling */
+.section-container {
+  margin-bottom: 50px;
+  /* Space between sections */
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  /* Light separator */
+}
+
+.section-container:first-of-type {
+  border-top: none;
+  /* No top border for the very first section */
+}
+
+.section-container h2 {
+  color: #062341;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.section-container .description {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Cards Container Styles */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Card Styles */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Las tarjetas también con un poco de transparencia */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  position: relative;
+  height: 150px;
+  /* Adjust height as needed */
+  overflow: hidden;
+  background-color: #eee;
+  /* Placeholder for background if image not loaded */
+}
+
+.card-header .background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image covers the area */
+  display: block;
+}
+
+.card-header .overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(100, 98, 98, 0.6);
+  /* Semi-transparent black background */
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  /* Allows buttons to wrap to next line if space is limited */
+}
+
+.card-body button {
+  background-color: #59c1c9;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  /* Aumentado el padding para que el redondeo se vea mejor */
+  border-radius: 20px;
+  /* --- CAMBIO AQUÍ: Más redondeado --- */
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Añadida una pequeña transformación */
+}
+
+.card-body button:hover {
+  background-color: #01152b;
+  transform: translateY(-2px);
+  /* Pequeño efecto al pasar el ratón */
+}
+
+.card-body p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+/* Specific Link/Video Styles for buttons/links */
+.card-body .map-link,
+.card-body .link-guide,
+.card-body .video-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #082544;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+  /* Align link to the start of the flex container */
+}
+
+.card-body .map-link:hover,
+.card-body .link-guide:hover,
+.card-body .video-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Empty Card (for future content) */
+.empty-card {
+  opacity: 0.7;
+  /* Slightly faded to indicate it's a placeholder */
+  border-style: dashed;
+}
+
+/* ... (Todo tu CSS existente ANTES de la sección .dia-vih-sida) ... */
+
+/* Estilos para la sección del Día Mundial contra el VIH/SIDA (AHORA SÍ, EL DISEÑO DEL BOCETO) */
+.dia-vih-sida {
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Fondo casi sólido */
+  padding: 30px 20px;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e7e7e7;
+  text-align: center;
+  /* Para centrar el contenido en caso de que no haya suficiente espacio para flex */
+}
+
+.dia-content-wrapper {
+  display: flex;
+  /* Habilitar Flexbox */
+  align-items: center;
+  /* Alinear verticalmente al centro */
+  justify-content: center;
+  /* Centrar el contenido horizontalmente */
+  gap: 30px;
+  /* Espacio entre las tres áreas */
+  max-width: 1000px;
+  /* Un ancho máximo para el contenedor interno */
+  margin: 0 auto;
+  /* Centrar el wrapper dentro de la sección */
+  flex-wrap: wrap;
+  /* Permitir que los elementos se envuelvan si la pantalla es muy pequeña */
+  padding: 10px;
+  /* Pequeño padding interno */
+}
+
+.dia-image-area {
+  flex-shrink: 0;
+  /* CAMBIO: Aumenta el tamaño base y el ancho máximo del área de la imagen */
+  flex-basis: 200px;
+  /* Por ejemplo, de 150px a 200px */
+  max-width: 200px;
+  /* De 150px a 200px */
+  height: 200px;
+  /* De 150px a 200px para que sea cuadrada */
+  /* FIN CAMBIO */
+
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente la imagen dentro de esta área */
+  align-items: center;
+  /* Centrar VERTICALMENTE la imagen dentro de esta área */
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dia-image {
+  max-width: 100%;
+  /* La imagen no se desbordará del nuevo tamaño del contenedor */
+  max-height: 100%;
+  object-fit: contain;
+
+}
+
+.dia-main-text-area {
+  flex-grow: 1;
+  /* Permite que este área ocupe el espacio restante */
+  text-align: center;
+  /* Centrar el texto dentro de este área */
+  min-width: 250px;
+  /* Ancho mínimo para que el texto no se comprima demasiado */
+  max-width: 400px;
+  /* Ancho máximo para el texto principal */
+}
+
+.dia-date {
+  display: block;
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: bold;
+  /* Hacer la fecha un poco más prominente */
+}
+
+.dia-title {
+  font-size: 2.5em;
+  /* Letra grande para el título principal */
+  color: #cc0000;
+  font-weight: bold;
+  line-height: 1.1;
+  /* Ajustar el espaciado entre líneas */
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Opcional: Estilos para los botones si decides incluirlos */
+.dia-vih-sida .call-to-action {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dia-vih-sida .button-info {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dia-vih-sida .button-info:hover {
+  background-color: #990000;
+  transform: translateY(-2px);
+}
+
+/* Ajustes responsivos para esta sección */
+@media (max-width: 768px) {
+  .dia-content-wrapper {
+    flex-direction: column;
+    /* Apilar los elementos en pantallas pequeñas */
+    align-items: center;
+    /* Centrar elementos cuando están apilados */
+    gap: 15px;
+    /* Reducir el espacio entre elementos apilados */
+  }
+
+  .dia-image-area {
+    margin-bottom: 10px;
+    /* Espacio debajo de la imagen cuando está apilada */
+  }
+
+  .dia-main-text-area {
+    width: 100%;
+    /* Ocupar todo el ancho disponible */
+    max-width: 90%;
+    /* Un poco de margen en los lados */
+    text-align: center;
+    /* Centrar todo el texto en móviles */
+  }
+
+  .dia-title {
+    font-size: 1.8em;
+    /* Ajustar tamaño del título para móviles */
+  }
+}
+
+/*======== Recomendaciones section ========*/
+/*estilos para el encabezado de recuros*/
+/* ====== Estilos generales de tarjetas ====== */
+.health-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1000px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.health-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  min-height: 150px;
+  /* Altura mínima del encabezado */
+  color: white;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  /* PROPIEDADES DE FONDO GENERALES PARA EL CARD-HEADER */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+}
+
+
+
+
+.hiv-card .card-header {
+  background: linear-gradient(135deg, #e44d26 0%, #f16529 100%);
+}
+
+.lifestyle-card .card-header {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.tests-card .card-header {
+  background: linear-gradient(135deg, #556270 0%, #4ecdc4 100%);
+}
+
+/* Versión con recorte de imagen (como el VIH) */
+.card-icon {
+  width: 80px;
+  height: 120%;
+  /* Más alto que el contenedor */
+  margin-right: 20px;
+  object-fit: cover;
+  object-position: center 30%;
+  /* Muestra el 30% desde el top */
+  opacity: 0.8;
+  filter: brightness(1.2) contrast(0.9);
+  transform: scale(1.1);
+  /* Ligero zoom */
+  margin-left: -10px;
+  /* Compensa el zoom */
+}
+
+.card-title {
+  position: relative;
+  z-index: 2;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-left: 1.5rem;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+/* ====== Estilos de recomendaciones ====== */
+.recommendation-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.recommendation-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.recommendation-content {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+.recommendation-image {
+  flex: 0 0 40%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.recommendation-item:hover .recommendation-image img {
+  transform: scale(1.03);
+}
+
+.recommendation-subtitle {
+  color: #2b7a78;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.recommendation-subtitle:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #3aafa9;
+}
+
+.vph-card .recommendation-subtitle:after {
+  background: #a044ff;
+}
+
+.hiv-card .recommendation-subtitle:after {
+  background: #f16529;
+}
+
+.recommendation-details {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-tag {
+  background: #f0f8f8;
+  color: #2b7a78;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ====== Estilos de lista ====== */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.check-list li {
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.check-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3aafa9;
+  font-weight: bold;
+}
+
+.vph-card .check-list li:before {
+  color: #a044ff;
+}
+
+.hiv-card .check-list li:before {
+  color: #f16529;
+}
+
+/* ====== Estilos de vida saludable ====== */
+.lifestyle-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.lifestyle-item {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.lifestyle-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.lifestyle-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e8f5f5;
+}
+
+.nutricion-icon {
+  /* CAMBIO CRUCIAL AQUÍ: Ruta relativa */
+  background-image: url('../img/icons/nutricionicon.png');
+}
+
+.ejercicio-icon {
+  background-image: url('../img/icons/dormir.png');
+}
+
+.dormir-icon {
+  background-image: url('../img/icons/ejerci.png');
+}
+
+.estres-icon {
+  background-image: url('../img/icons/meditacion.png');
+}
+
+.lifestyle-item h3 {
+  color: #2b7a78;
+  margin: 0 0 0.5rem;
+}
+
+/* ====== Estilos de tabla ====== */
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.modern-table thead th {
+  background: #f5f5f5;
+  color: #333;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.modern-table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.modern-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/*fichas de info */
+
+
+/*agendar cita -- section */
+/* ========== ESTILO GENERAL - AGENDAR CITA ========== */
+.content-cita {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1200px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #264e70;
+  margin-bottom: 0.5rem;
+}
+
+/* Contenedor de formulario y lateral */
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-form {
+  flex: 2;
+  min-width: 300px;
+}
+
+.info-sidebar {
+  flex: 1;
+  min-width: 280px;
+}
+
+.section-title {
+  font-family: var(--font-title, 'Montserrat', sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #264e70;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #264e70;
+  margin-bottom: 0.5rem;
+}
+
+.espaciado-superior {
+  margin-top: 1.5rem;
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+/* Botón principal */
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Botón Ver y badge */
+.btn-ver {
+  background-color: #3498db;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.badge-pendiente {
+  background-color: #f1c40f;
+}
+
+.badge-confirmada {
+  background-color: #2ecc71;
+}
+
+.badge-cancelada {
+  background-color: #e74c3c;
+}
+
+.badge-completada {
+  background-color: #3498db;
+}
+
+/* Dropdown personalizado */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-toggle {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  margin-top: 0.3rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 100;
+  min-width: 150px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+.alerta {
+  background-color: #fef3c7;
+  padding: 1rem;
+  border-left: 4px solid #fbbf24;
+  border-radius: 4px;
+  color: #92400e;
+}
+
+/*sdfsfsdfasfasdf*/
+/* ========== ESTILO GENERAL - AGENDAR CITA SIN BOOTSTRAP ========== */
+.content-cita {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1200px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #264e70;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Diseño de dos columnas */
+.info-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-form {
+  flex: 2;
+  min-width: 300px;
+}
+
+.info-sidebar {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #264e70;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.invalid-feedback {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Checkbox y Google Card */
+.card-checkbox {
+  background-color: #e9f6ff;
+  border-left: 4px solid #3498db;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card-checkbox label {
+  font-weight: 600;
+  color: #264e70;
+}
+
+/* Sidebar Info */
+.info-sidebar h2,
+.info-sidebar h3 {
+  font-size: 1rem;
+  color: #264e70;
+  margin-bottom: 0.5rem;
+}
+
+.info-sidebar p,
+.info-sidebar li,
+.info-sidebar address {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.info-sidebar ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.info-sidebar hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+/* Modal personalizado */
+.modal-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-custom.active {
+  display: flex;
+}
+
+.modal-content-custom {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  float: right;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.modal-close:hover {
+  color: #000;
+}
