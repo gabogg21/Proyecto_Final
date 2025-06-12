@@ -1,0 +1,118 @@
+.
+├── project...
+│   ├── app
+│   │   ├── forms
+│   │   │   ├── cita_form.py
+│   │   │   ├── __init__.py
+│   │   │   └── __pycache__
+│   │   │       ├── cita_form.cpython-312.pyc
+│   │   │       └── __init__.cpython-312.pyc
+│   │   ├── __init__.py
+│   │   ├── models
+│   │   │   ├── cita.py
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── cita.cpython-312.pyc
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   └── usuario.cpython-312.pyc
+│   │   │   └── usuario.py
+│   │   ├── __pycache__
+│   │   │   └── __init__.cpython-312.pyc
+│   │   ├── routes
+│   │   │   ├── citas.py
+│   │   │   ├── inicio.py
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── citas.cpython-312.pyc
+│   │   │   │   ├── inicio.cpython-312.pyc
+│   │   │   │   ├── __init__.cpython-312.pyc
+│   │   │   │   ├── recomendaciones.cpython-312.pyc
+│   │   │   │   └── recursos.cpython-312.pyc
+│   │   │   ├── recomendaciones.py
+│   │   │   └── recursos.py
+│   │   ├── static
+│   │   │   ├── css
+│   │   │   │   └── main.css
+│   │   │   └── img
+│   │   │       ├── alimentacion.jpg
+│   │   │       ├── carga-viral.jpg
+│   │   │       ├── chequeo.jpg
+│   │   │       ├── cies-centro.png
+│   │   │       ├── comovih.jpg
+│   │   │       ├── dormir.jpg
+│   │   │       ├── ejercicio.jpg
+│   │   │       ├── Fachada-Mercado-Campesino-scaled.jpg
+│   │   │       ├── guiaadulto.jpg
+│   │   │       ├── icons
+│   │   │       │   ├── dormir.png
+│   │   │       │   ├── ejerci.png
+│   │   │       │   ├── healthy_food_chjgu1q6a5pp.svg
+│   │   │       │   ├── meditacion.png
+│   │   │       │   └── nutricionicon.png
+│   │   │       ├── labo-Tarija.jpg
+│   │   │       ├── Lazo-rojo.jpeg
+│   │   │       ├── logo2.png
+│   │   │       ├── logo.jpeg
+│   │   │       ├── loguito.png
+│   │   │       ├── materno.jpg
+│   │   │       ├── NINOS.jpg
+│   │   │       ├── Packet_Tracer822_64bit_setup_signed.exe
+│   │   │       ├── prevention.png
+│   │   │       ├── prevent.jpg
+│   │   │       ├── prueba.jpg
+│   │   │       ├── qs.jpg
+│   │   │       ├── qs.webp
+│   │   │       ├── salud.jpg
+│   │   │       ├── sanlucas.jpg
+│   │   │       ├── sedes.jpeg
+│   │   │       ├── sexO.jpeg
+│   │   │       ├── sida.jpeg
+│   │   │       ├── SIDA.jpg
+│   │   │       ├── tabaco.jpg
+│   │   │       ├── tests.webp
+│   │   │       ├── tratam.jpg
+│   │   │       ├── vac.jpg
+│   │   │       ├── vacuna.jpg
+│   │   │       ├── vih2.avif
+│   │   │       ├── vihh.webp
+│   │   │       ├── vihimagenchida.webp
+│   │   │       ├── vih.jpg
+│   │   │       ├── vih.jpg.webp
+│   │   │       ├── viih.jpg
+│   │   │       ├── virus-vih.jpg
+│   │   │       ├── vivir.jpeg
+│   │   │       ├── vph_1.jpg
+│   │   │       ├── vph2.png
+│   │   │       ├── vphhh.jpeg
+│   │   │       ├── vph.jpeg
+│   │   │       ├── vph.jpg
+│   │   │       └── wih.webp
+│   │   └── templates
+│   │       ├── {{ url_for('static', filename='img
+│   │       │   ├── logo.jepg') }}
+│   │       │   ├── vih.jpg.webp') }}
+│   │       │   └── vph.jepg') }}
+│   │       ├── base.html
+│   │       ├── citas
+│   │       │   ├── detalle.html
+│   │       │   ├── form.html
+│   │       │   └── lista.html
+│   │       ├── inicio.html
+│   │       ├── recomendaciones.html
+│   │       └── recursos.html
+│   ├── app.db
+│   ├── client_secret_889543132017-vssn6d43h8p8jnaodi5c0nfkami5rofi.apps.googleusercontent.com.json
+│   ├── config.py
+│   ├── migrations
+│   │   ├── alembic.ini
+│   │   ├── env.py
+│   │   ├── __pycache__
+│   │   │   └── env.cpython-312.pyc
+│   │   ├── README
+│   │   ├── script.py.mako
+│   │   └── versions
+│   ├── run.py
+│   └── simple_app.py
+└── req.txt
+
+20 directories, 96 files
