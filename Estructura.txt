@@ -101,8 +101,7 @@
 │   │       ├── recomendaciones.html
 │   │       └── recursos.html
 │   ├── app.db
-│   ├── client_secret_889543132017-vssn6d43h8p8jnaodi5c0nfkami5rofi.apps.googleusercontent.com.json
-│   ├── config.py
+│   ├── client_secret......
 │   ├── migrations
 │   │   ├── alembic.ini
 │   │   ├── env.py
