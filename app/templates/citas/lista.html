@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="section-title">Lista de Citas</h1>
+<p class="lead">Gestión de citas agendadas</p>
+
+<div class="tabla-citas-card">
+  <div class="tabla-citas-body">
+    {% if citas %}
+      <div class="tabla-responsive">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Fecha y Hora</th>
+              <th>Tipo</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cita in citas %}
+              <tr>
+                <td>{{ cita.id }}</td>
+                <td>{{ cita.nombre }}</td>
+                <td>{{ cita.fecha.strftime('%d/%m/%Y') }} - {{ cita.hora.strftime('%H:%M') }}</td>
+                <td>{{ cita.tipo_consulta }}</td>
+                <td>
+                  <span class="badge 
+                    {% if cita.estado == 'pendiente' %}badge-pendiente
+                    {% elif cita.estado == 'confirmada' %}badge-confirmada
+                    {% elif cita.estado == 'cancelada' %}badge-cancelada
+                    {% else %}badge-completada{% endif %}">
+                    {{ cita.estado }}
+                  </span>
+                </td>
+                <td>
+                  <a href="{{ url_for('citas.detalle', id=cita.id) }}" class="btn-ver">Ver</a>
+                  <div class="dropdown">
+                    <button class="dropdown-toggle">Estado</button>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('citas.cambiar_estado', id=cita.id, estado='pendiente') }}">Pendiente</a></li>
+                      <li><a href="{{ url_for('citas.cambiar_estado', id=cita.id, estado='confirmada') }}">Confirmada</a></li>
+                      <li><a href="{{ url_for('citas.cambiar_estado', id=cita.id, estado='cancelada') }}">Cancelada</a></li>
+                      <li><a href="{{ url_for('citas.cambiar_estado', id=cita.id, estado='completada') }}">Completada</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div class="alerta">No hay citas registradas actualmente.</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,186 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="content-container">
+  <h1 class="section-title">Recomendaciones</h1>
+  <p class="intro-text">Consejos prácticos para la prevención y manejo del VIH, SIDA y VPH.</p>
+
+  <!-- Tarjeta de VPH -->
+  {% set vph_bg = url_for('static', filename='img/vihh.webp') %}
+
+    <div class="health-card vph-card">
+      <div class="card-header" style="background-image: url('{{ vph_bg }}')">
+        <h2 class="card-title">Recomendaciones para VPH</h2>
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="recommendation-item">
+        <div class="recommendation-content">
+          <h3 class="recommendation-subtitle">1. Vacunación</h3>
+          <p>La vacuna contra el VPH es segura y efectiva. Disponible para niñas y niños desde los 10 años.</p>
+          <div class="recommendation-details">
+            <span class="detail-tag">Edad recomendada: 10-26 años</span>
+            <span class="detail-tag">Dosis: 2-3 aplicaciones</span>
+          </div>
+        </div>
+        <div class="recommendation-image">
+          <img src="{{ url_for('static', filename='img/vac.jpg') }}" alt="Vacuna VPH">
+        </div>
+      </div>
+
+      <div class="recommendation-item reverse">
+        <div class="recommendation-content">
+          <h3 class="recommendation-subtitle">2. Chequeos regulares</h3>
+          <ul class="check-list">
+            <li>Papanicolaou cada 3 años (mujeres 21-65 años)</li>
+            <li>Prueba de VPH cada 5 años (mujeres ≥30 años)</li>
+            <li>Exámenes urológicos para hombres con factores de riesgo</li>
+          </ul>
+        </div>
+        <div class="recommendation-image">
+          <img src="{{ url_for('static', filename='img/chequeo.jpg') }}" alt="Chequeos médicos">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta de VIH -->
+  {% set vih_bg = url_for('static', filename='img/viih.jpg') %}
+
+    <div class="health-card vph-card">
+      <div class="card-header" style="background-image: url('{{ vih_bg }}')">
+        <h2 class="card-title">Recomendaciones para VIH/SIDA</h2>
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="recommendation-item">
+        <div class="recommendation-content">
+          <h3 class="recommendation-subtitle">1. Prevención</h3>
+          <ul class="check-list">
+            <li>Uso correcto de preservativos en todas las relaciones</li>
+            <li>Considerar PrEP si tienes alto riesgo</li>
+            <li>No compartir agujas u objetos punzantes</li>
+          </ul>
+        </div>
+        <div class="recommendation-image">
+          <img src="{{ url_for('static', filename='img/prevent.jpg') }}" alt="Prevención VIH">
+        </div>
+      </div>
+
+      <div class="recommendation-item reverse">
+        <div class="recommendation-content">
+          <h3 class="recommendation-subtitle">2. Diagnóstico y tratamiento</h3>
+          <p>Pruebas anuales si eres sexualmente activo. En caso positivo:</p>
+          <ul class="check-list">
+            <li>Iniciar tratamiento antirretroviral inmediatamente</li>
+            <li>Monitoreo regular de carga viral y CD4</li>
+            <li>Vacunarse contra enfermedades oportunistas</li>
+          </ul>
+        </div>
+        <div class="recommendation-image">
+          <img src="{{ url_for('static', filename='img/tratam.jpg') }}" alt="Tratamiento VIH">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta de vida saludable -->
+  {% set alimentacion_bg = url_for('static', filename='img/alimentacion.jpg') %}
+
+    <div class="health-card vph-card">
+      <div class="card-header" style="background-image: url('{{ alimentacion_bg }}')">
+        <h2 class="card-title">Vida Saludable con VPH</h2>
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="lifestyle-intro">
+        <p>El VPH es común, pero un estilo de vida saludable ayuda a tu cuerpo a combatirlo y prevenir complicaciones.</p>
+      </div>
+      
+      <div class="lifestyle-grid">
+        <div class="lifestyle-item">
+          <div class="lifestyle-icon nutricion-icon"></div>
+          <h3>Nutrición</h3>
+          <p>Dieta rica en antioxidantes, vitaminas C y E, y ácido fólico.</p>
+        </div>
+        
+        <div class="lifestyle-item">
+          <div class="lifestyle-icon ejercicio-icon"></div>
+          <h3>Ejercicio</h3>
+          <p>30 minutos diarios de actividad física moderada.</p>
+        </div>
+        
+        <div class="lifestyle-item">
+          <div class="lifestyle-icon dormir-icon"></div>
+          <h3>Sueño</h3>
+          <p>7-8 horas de sueño reparador cada noche.</p>
+        </div>
+        
+        <div class="lifestyle-item">
+          <div class="lifestyle-icon estres-icon"></div>
+          <h3>Manejo del estrés</h3>
+          <p>Meditación, yoga o técnicas de relajación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla de pruebas -->
+  {% set test_bg = url_for('static', filename='img/tests.webp') %}
+
+    <div class="health-card vph-card">
+      <div class="card-header" style="background-image: url('{{ test_bg }}')">
+        <h2 class="card-title">Pruebas de Detección</h2>
+      </div>
+    </div>
+    <div class="card-content">
+      <table class="modern-table">
+        <thead>
+          <tr>
+            <th>Prueba</th>
+            <th>Frecuencia</th>
+            <th>Población</th>
+            <th>Importancia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>VIH</td>
+            <td>Anual (si riesgo elevado)</td>
+            <td>Sexualmente activos</td>
+            <td>Detección temprana</td>
+          </tr>
+          <tr>
+            <td>Papanicolaou</td>
+            <td>Cada 3 años</td>
+            <td>Mujeres 21-65 años</td>
+            <td>Detectar cambios celulares</td>
+          </tr>
+          <tr>
+            <td>VPH</td>
+            <td>Cada 5 años</td>
+            <td>Mujeres ≥30 años</td>
+            <td>Identificar cepas de alto riesgo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-alert">
+    <div class="cta-content">
+      <div class="cta-text">
+        <h3>Recuerda </h3>
+        <p>Estas recomendaciones son generales. Para consejos personalizados, consulta siempre con un profesional de la salud.</p>
+      </div> <!-- 👈 Cierre correcto aquí -->
+      
+      <div class="cta-button">
+        <a href="{{ url_for('citas.agendar') }}" class="cta-btn">Agendar una Consulta</a>
+      </div>
+    </div>
+  </section>
+  
+
+{% endblock %}

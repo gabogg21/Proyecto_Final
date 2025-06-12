@@ -1,0 +1,59 @@
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=chunk@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaX</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+    <!-- Header / Navbar -->
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='img/loguito.png') }}" alt="Logo VitaX">
+                </div>
+                <div class="brand-text">
+                    <h1>VitaX</h1>
+                    <p>Educación sexual para todos</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="{{ url_for('inicio.index') }}" class="nav-item {% if request.path == url_for('inicio.index') %}active{% endif %}">Inicio</a>
+                <a href="{{ url_for('recursos.index') }}" class="nav-item {% if request.path.startswith('/recursos') %}active{% endif %}">Recursos</a>
+                <a href="{{ url_for('recomendaciones.index') }}" class="nav-item {% if request.path.startswith('/recomendaciones') %}active{% endif %}">Recomendaciones</a>
+                <a href="{{ url_for('citas.agendar') }}" class="nav-item {% if request.path.startswith('/citas') %}active{% endif %}">Agendar Cita</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="main-content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2025 - VitaX - Información sobre VIH, SIDA y VPH - Consulte siempre a un profesional de la salud</p>
+    </footer>
+</body>
+</html>

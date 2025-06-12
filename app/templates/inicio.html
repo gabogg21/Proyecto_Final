@@ -1,0 +1,184 @@
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Passion+One:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- agrega las fuentes que quiera -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h2 class="hero-title">¿Quiénes somos?</h2>
+    <p class="hero-description">
+      En <strong>VitaX</strong>, acercamos a las personas a centros de salud donde pueden acceder a pruebas, tratamiento y orientación sobre VIH, SIDA y VPH, promoviendo el cuidado y la prevención con información confiable.
+    </p>
+  </div>
+</section>
+<!-- Main Information Section -->
+<section class="content-container">
+  <h1 class="section-title">Información sobre VIH, SIDA y VPH</h1>
+  <p class="lead">Portal informativo para la prevención, detección y tratamiento del VIH, SIDA y el Virus del Papiloma Humano.
+    La información correcta es fundamental para prevenir estas infecciones y mantener una buena salud sexual.</p>
+
+  <div class="cards-container">
+
+    <!-- VIH -->
+    <div class="card">
+      <div class="card-header">
+        <img src="{{ url_for('static', filename='img/vih2.avif') }}" alt="Imagen de VIH" class="background-image">
+        <div class="overlay-text">
+          <h3>VIH: Virus de la Inmunodeficiencia</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>El Virus de Inmunodeficiencia Humana (VIH) ataca el sistema inmunitario del cuerpo. Si no se trata, puede llevar al SIDA.</p>
+        <p><strong>Transmisión:</strong></p>
+        <ul>
+          <li>Relaciones sexuales sin protección</li>
+          <li>Compartir agujas o jeringas</li>
+          <li>De madre a hijo durante el embarazo, parto o lactancia</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SIDA -->
+    <div class="card">
+      <div class="card-header">
+        <img src="{{ url_for('static', filename='img/sida.jpeg') }}" alt="Imagen de SIDA" class="background-image">
+        <div class="overlay-text">
+          <h3>SIDA: Síndrome de Inmunodeficiencia Adquirida</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>El Síndrome de Inmunodeficiencia Adquirida (SIDA) es la etapa avanzada del VIH cuando el sistema inmune está gravemente dañado.</p>
+        <p><strong>Síntomas comunes:</strong></p>
+        <ul>
+          <li>Pérdida rápida de peso</li>
+          <li>Fiebre recurrente</li>
+          <li>Fatiga extrema</li>
+          <li>Infecciones oportunistas</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- VPH -->
+    <div class="card">
+      <div class="card-header">
+        <img src="{{ url_for('static', filename='img/vph2.png') }}" alt="Imagen de VPH" class="background-image">
+        <div class="overlay-text">
+          <h3>VPH: Virus del Papiloma Humano</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>El Virus del Papiloma Humano (VPH) es la ITS más común. Algunos tipos pueden causar cáncer.</p>
+        <p><strong>Consideraciones importantes:</strong></p>
+        <ul>
+          <li>Existe vacuna preventiva</li>
+          <li>Muchas personas no presentan síntomas</li>
+          <li>Puede causar verrugas genitales o cáncer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Statistics Section -->
+<section class="info-visual">
+  <div class="info-row-horizontal">
+    <!-- VPH -->
+    <div class="info-section">
+      <div class="section-header">
+        <h2 class="section-title">VPH</h2>
+        <span class="virus-name">Virus del Papiloma Humano</span>
+      </div>
+      <p class="intro-text">El VPH está relacionado con múltiples condiciones de salud que afectan tanto a hombres como mujeres.</p>
+
+      <div class="stats-container">
+        <div class="stat-circle">
+          <div class="circle-bg partial-100">
+            <div class="circle-inner">
+              <span class="percentage">≈ 100%</span>
+            </div>
+          </div>
+          <p class="stat-description">Cáncer de cuello uterino</p>
+        </div>
+
+        <div class="stat-circle">
+          <div class="circle-bg partial-90">
+            <div class="circle-inner">
+              <span class="percentage">≈ 90%</span>
+            </div>
+          </div>
+          <p class="stat-description">Verrugas genitales*</p>
+        </div>
+      </div>
+
+      <p class="note">* Genotipos 6 y 11</p>
+
+      <div class="disclaimer">
+        <p class="disclaimer-text">
+          Esta información es de carácter general. No sustituye la consulta médica ni el tratamiento personalizado.
+        </p>
+      </div>
+    </div>
+
+    <!-- VIH -->
+    <div class="info-section">
+      <div class="section-header">
+        <h2 class="section-title">VIH</h2>
+        <span class="virus-name">Virus de Inmunodeficiencia Humana</span>
+      </div>
+      <p class="intro-text">El VIH debilita el sistema inmunológico. Su tratamiento adecuado puede mejorar significativamente la calidad de vida.</p>
+
+      <div class="stats-container">
+        <div class="stat-circle">
+          <div class="circle-bg partial-85">
+            <div class="circle-inner">
+              <span class="percentage">≈ 85%</span>
+            </div>
+          </div>
+          <p class="stat-description">Reducción del riesgo con tratamiento</p>
+        </div>
+
+        <div class="stat-circle">
+          <div class="circle-bg partial-95">
+            <div class="circle-inner">
+              <span class="percentage">≈ 95%</span>
+            </div>
+          </div>
+          <p class="stat-description">Efectividad de la PrEP*</p>
+        </div>
+      </div>
+
+      <p class="note">* Profilaxis Pre-Exposición cuando se usa correctamente</p>
+
+      <div class="disclaimer">
+        <p class="disclaimer-text">
+          Esta información no reemplaza la atención médica. Consulta siempre con un profesional de la salud.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="cta-alert">
+  <div class="cta-content">
+    <div class="cta-text">
+      <h3>La detección temprana salva vidas</h3>
+      <p>Las pruebas regulares son fundamentales para la detección temprana del VIH y del VPH. Consulta la sección de
+        <a href="{{ url_for('recomendaciones.index') }}">Recomendaciones</a> para más información.
+      </p>
+    </div>
+    <div class="cta-button">
+      <a href="{{ url_for('citas.agendar') }}" class="cta-btn">Agendar Cita</a>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

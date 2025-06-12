@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-cita">
+    <h1 class="section-title">Agendar Cita</h1>
+    <p class="lead">Completa el formulario para solicitar una cita con nuestros especialistas.</p>
+
+    <div class="info-card">
+        <div class="info-form">
+            <form method="POST" novalidate>
+                {{ form.hidden_tag() }}
+
+                <div class="form-group">
+                    {{ form.nombre.label(class="form-label") }}
+                    {{ form.nombre(class="form-input" + (" invalid" if form.nombre.errors else "")) }}
+                    {% if form.nombre.errors %}
+                        <div class="form-error">
+                            {% for error in form.nombre.errors %}{{ error }}{% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-input" + (" invalid" if form.email.errors else "")) }}
+                    {% if form.email.errors %}
+                        <div class="form-error">
+                            {% for error in form.email.errors %}{{ error }}{% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.telefono.label(class="form-label") }}
+                    {{ form.telefono(class="form-input" + (" invalid" if form.telefono.errors else "")) }}
+                    {% if form.telefono.errors %}
+                        <div class="form-error">
+                            {% for error in form.telefono.errors %}{{ error }}{% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" style="flex: 1; margin-right: 1rem;">
+                        {{ form.fecha.label(class="form-label") }}
+                        {{ form.fecha(class="form-input" + (" invalid" if form.fecha.errors else ""), type="date") }}
+                        {% if form.fecha.errors %}
+                            <div class="form-error">
+                                {% for error in form.fecha.errors %}{{ error }}{% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group" style="flex: 1;">
+                        {{ form.hora.label(class="form-label") }}
+                        {{ form.hora(class="form-input" + (" invalid" if form.hora.errors else ""), type="time") }}
+                        {% if form.hora.errors %}
+                            <div class="form-error">
+                                {% for error in form.hora.errors %}{{ error }}{% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form.tipo_consulta.label(class="form-label") }}
+                    {{ form.tipo_consulta(class="form-select" + (" invalid" if form.tipo_consulta.errors else "")) }}
+                    {% if form.tipo_consulta.errors %}
+                        <div class="form-error">
+                            {% for error in form.tipo_consulta.errors %}{{ error }}{% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.comentarios.label(class="form-label") }}
+                    {{ form.comentarios(class="form-textarea", rows="3") }}
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="sincronizar_google" name="sincronizar_google">
+                    <label for="sincronizar_google"><strong>📅 Añadir a Google Calendar</strong></label>
+                    <small class="form-note">Si marcas esta opción, se creará automáticamente un evento en tu Google Calendar con los detalles de tu cita.</small>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="privacidad" required>
+                    <label for="privacidad">
+                        Acepto la <a href="#" data-bs-toggle="modal" data-bs-target="#privacidadModal">política de privacidad</a> y el tratamiento de mis datos
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    {{ form.submit(class="btn-primary") }}
+                </div>
+            </form>
+        </div>
+
+        <div class="info-sidebar">
+            <h2 class="subtitulo">📋 Información importante</h2>
+            <p>Una vez enviada tu solicitud, nuestro equipo se pondrá en contacto contigo para confirmar la cita.</p>
+            <p>Todas las consultas son confidenciales y están protegidas por el secreto profesional.</p>
+            <hr>
+            <h3 class="subtitulo">🕐 Horario de atención:</h3>
+            <ul>
+                <li>Lunes a viernes: 9:00 - 18:00</li>
+                <li>Sábados: 9:00 - 13:00</li>
+            </ul>
+            <hr>
+            <h2 class="subtitulo">📞 Contacto</h2>
+            <address>
+                <strong>Centro de Salud Sexual</strong><br>
+                Av. Principal #123<br>
+                Ciudad, CP 12345<br>
+                <abbr title="Teléfono">Tel:</abbr> (123) 456-7890
+            </address>
+            <p>Email: <a href="mailto:info@ejemplo.com">info@ejemplo.com</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="privacidadModal" tabindex="-1" aria-labelledby="privacidadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacidadModalLabel">Política de Privacidad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Tratamiento de Datos Personales</h6>
+                <p>Sus datos personales serán utilizados únicamente para:</p>
+                <ul>
+                    <li>Gestionar su cita médica</li>
+                    <li>Contactarle para confirmación</li>
+                    <li>Brindar atención médica especializada</li>
+                    <li>Sincronización opcional con Google Calendar</li>
+                </ul>
+                <p>Nos comprometemos a mantener la confidencialidad médica y no compartir su información con terceros sin su consentimiento.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fechaInput = document.querySelector('input[type="date"]');
+    if (fechaInput) {
+        const hoy = new Date().toISOString().split('T')[0];
+        fechaInput.setAttribute('min', hoy);
+    }
+});
+</script>
+{% endblock %}    

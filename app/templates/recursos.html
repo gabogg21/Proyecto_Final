@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Informativos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recursos Informativos</h1>
+        <p>Encuentra aquí material educativo, guías y recursos importantes sobre VIH y VPH.</p>
+    </header>
+
+    <main>
+        <section class="hospitales-clinicas">
+            <h2>Hospitales y Clínicas</h2>
+            <p class="description">Centro de atención donde puedes realizarte pruebas de VIH, vacunarte contra el VPH y recibir tratamiento.</p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/sedes.jpeg') }}"alt="Imagen de SEDES" class="background-image">
+                        <div class="overlay-text">
+                            <h3>SEDES, Servicio Departamental de Salud</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="buttons">
+                            <button>Pruebas de VIH</button>
+                            <button>Tratamiento</button>
+                            <button>Diagnostico</button>
+                        </div>
+                        <p><strong>Ubicación:</strong> Avenida Potosi, Tarija</p>
+                        <p><strong>Atención:</strong> Lunes a viernes de 7am-13pm</p>
+                        <p><strong>Teléfono:</strong>46665074 </p>
+                        <a href="https://g.co/kgs/efy5tWz" class="map-link">Ver en mapa</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/cies-centro.png') }}" alt="Imagen de Cies1" class="background-image">
+                        <div class="overlay-text">
+                            <h3>CIES-Salud Sexual y Reproductiva</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="buttons">
+                            <button>Vacuna VPH</button>
+                            <button>metodos Anticonceptivos</button>
+                            <button>emergencias</button>
+                        </div>
+                        <p><strong>Ubicación:</strong> calle Bolivar, entre Mendez y Santa cruz #475, Tarija</p>
+                        <p><strong>Teléfono:</strong>76529989</p>
+                        <a href="https://g.co/kgs/mmqGevD" class="map-link">Ver en mapa</a>
+                    </div>
+                </div>
+
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/Fachada-Mercado-Campesino-scaled.jpg') }}"  alt="Imagen de Cies2" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Cies Sucursal Zona Campesino</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="buttons">
+                            <button>emergencias 24 horas</button>
+                            <button>pruebas de VIH</button>
+                        </div>
+                        <p><strong>Ubicación:</strong> Av. Daniel Zamora #1529 entre calle Luis Campero y Timoteo Raña</p>
+                        <p><strong>Teléfono:</strong> 72969343-</p>
+                        <a href="https://g.co/kgs/UfNsBaQ" class="map-link">Ver en mapa</a>
+                    </div>
+                </div>
+
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/labo-Tarija.jpg') }}" alt="Imagen de Clinica Tarija" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Laboratorio Tarija Análisis Clínico</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="buttons">
+                            <button>Pruebas VIH</button>
+                        </div>
+                        <p><strong>Ubicación:</strong> #165, Corrado, Tarija</p>
+                        <p><strong>Atención:</strong> Lunes a Viernes de 7:30am-12:30pm, 2:30pm-7pm y Sabados de 7:30am-12pm</p>
+                        <p><strong>Teléfono:</strong> 68690060</p>
+                        <a href="#" class="map-link">Ver en mapa</a>
+                    </div>
+                </div>
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/sanlucas.jpg') }}"alt="Imagen de fondo" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Laboratorio de Análisis Clínico SAN LUCAS</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="buttons">
+                            <button>emergencias 24 horas</button>
+                            <button>Prueba VIH</button>
+                        </div>
+                        <p><strong>Ubicación:</strong> Tarija, La Loma, calle cochabamba, Aurelio Arce y, Tarija</p>
+                        <p><strong>Atención:</strong> lunes a Viernes de 7am-12pm, 3-6:30 pm y Sabados: 7am-12pm</p>
+                        <p><strong>Teléfono:</strong> 72909420</p>
+                        <a href="https://g.co/kgs/jjLwvdn" class="map-link">Ver en mapa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- SECCION DE ENLACES Y GUIAS  -->
+        <section class="enlaces-guias section-container">
+            <h2>Enlaces y Guías informativas</h2>
+            <p class="description">Accede a información detallada y guías útiles sobre VIH y VPH.</p>
+
+            <div class="cards-container">
+                    <!-- 1 -->
+                <div class="card card-link-guide">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/prevention.png') }}" alt="Imagen de prevención VIH" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Cómo prevenir el VIH</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Hay muchas herramientas disponibles para ayudar a prevenir el VIH.</p>
+                        <a href="https://www.cdc.gov/hiv/es/prevention/como-prevenir-el-vih.html" target="_blank" class="link-guide">Mas información</a>
+                    </div>
+                </div>
+                    <!-- 2-->
+                <div class="card card-link-guide">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/SIDA.jpg') }}" alt="Imagen de guía de tratamiento" class="background-image">
+                        <div class="overlay-text">
+                            <h3>DÍA MUNDIAL DEL SIDA</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>La Paz, 01 de diciembre de 2024 (UC/MSyD).- En el Día Mundial del Sida, el Ministerio de Salud y Deportes recuerda a la población que una prueba a tiempo puede salvar vidas..</p>
+                        <a href="https://www.minsalud.gob.bo/8417-dia-mundial-del-sida-mas-de-18-mil-personas-que-viven-con-vih-en-bolivia-acceden-a-diagnostico-y-tratamiento-antirretroviral-gratuito" target="_blank" class="link-guide">Enlace de la guía</a>
+                    </div>
+                </div>
+                    <!-- 3 -->
+                <div class="card empty-card card-link-guide">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/vph_1.jpg') }}" alt="Imagen de enlace/guía" class="background-image">
+                        <div class="overlay-text">
+                            <h3>LA VACUNA CONTRA EL VIRUS DEL PAPILOMA HUMANO</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Esta vacuna puede prevenir la mayoría de los casos de cuello uterino si se aplica antes de que el niña o la mujer se exponga al virus.</p>
+                        <a href="https://pai2.minsalud.gob.bo/ver_esquema_vph" class="link-guide">click para mas información</a>
+                    </div>
+                </div>
+                    <!-- 4 -->
+                <div class="card empty-card card-link-guide">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/guiaadulto.jpg') }}" alt="Imagen de enlace/guía" class="background-image">
+                        <div class="overlay-text">
+                            <h3>GUIA DE TRATAMIENTO ANTIRRETROVIRAL EN ADULTOS BOLIVIA</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Explica temas como la situación epidemiológica del VIH en el país.</p>
+                        <a href="https://www.minsalud.gob.bo/images/Documentacion/dgss/Epidemiologia/VIH%20-SIDA/5.GUIA%20TARV%20ADULTOS.pdf" class="link-guide">link de la guía</a>
+                    </div>
+                </div>
+                    <!-- 5 -->
+                <div class="card empty-card card-link-guide">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/NINOS.jpg') }}" alt="Imagen de enlace/guía" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Guía de Terapia Antirretroviral en Niños</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Nuestro País, con grandes avances en esta temática, asume estos cambios para mejorar la terapéutica y la calidad de vida de las personas que viven con el VIH.</p>
+                        <a href="https://www.minsalud.gob.bo/component/jdownloads/?task=download.send&id=779:guia-de-terapia-antirretroviral-en-ninos&catid=42&Itemid=646" class="link-guide">click para mas información</a>
+                    </div>
+                </div>
+                    <!-- 6 -->
+                <div class="card empty-card card-link-guide">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/materno.jpg') }}" alt="Imagen de enlace/guía" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Guía para la prevención de la transmisión materno infantil del VIH y la sífilis congénita</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>el propósito de estandarizar y normar los criterios técnicos de atención y tratamiento, para mejorar la respuesta nacional en los tres niveles de atención en todo el sistema de salud.</p>
+                        <a href="https://www.minsalud.gob.bo/component/jdownloads/?task=download.send&id=777:guia-para-la-prevencion-de-la-transmision-materno-infantil-del-vih-y-la-sifilis-congenita&catid=42&Itemid=646" class="link-guide">click para mas información</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- seccion de videos  -->
+        <section class="videos-informativos section-container">
+            <h2>Videos informativos</h2>
+            <p class="description">Visualiza contenido educativo y explicativo sobre VIH y VPH.</p>
+
+            <div class="cards-container">
+                <div class="card card-video">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/vph.jpg') }}" alt="Thumbnail del video VPH" class="background-image">
+                        <div class="overlay-text">
+                            <h3>¿Qué es el VPH?</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Aprende sobre el Virus del Papiloma Humano (VPH).</p>
+                        <a href="https://youtu.be/z6gOBIu0hk4?si=bdnv_y181DidbJS2" target="_blank" class="video-link">Ver video en YouTube</a>
+                    </div>
+                </div>
+
+                <div class="card card-video">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/vih.jpg') }}"alt="Thumbnail del video VIH" class="background-image">
+                        <div class="overlay-text">
+                            <h3>¿Qué es el VIH?</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Conoce los fundamentos del Virus de Inmunodeficiencia Humana (VIH).</p>
+                        <a href="https://youtu.be/_tmd0j3AyE4?si=6QXtpvaXJKXhNeco" target="_blank" class="video-link">Ver video en YouTube</a>
+                    </div>
+                </div>
+
+                <div class="card empty-card card-video">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/vivir.jpeg') }}" alt="Thumbnail de video" class="background-image">
+                        <div class="overlay-text">
+                            <h3>Cualquiera podría contraer VIH</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Testimonio de Guillermo Ruiz en Sin conservadores .</p>
+                        <a href="https://youtu.be/csbHohRvijo?si=dC_FOKVQysAlvHjh" class="video-link">Ver video en YouTube</a>
+                    </div>
+                </div>
+                <div class="card empty-card card-video">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/prueba.jpg') }}" alt="Thumbnail de video" class="background-image">
+                        <div class="overlay-text">
+                            <h3>PRUEBAS para DETECTAR VIH: </h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>TIPOS DE PRUEBAS Y CUÁNDO HACERSE LA PRUEBA</p>
+                        <a href="https://youtu.be/lIMVLrVl9L0?si=OGobNUotIuF4JXhL" class="video-link">Ver video en YouTube</a>
+                    </div>
+                </div>
+                <div class="card empty-card card-video">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/salud.jpg') }}" alt="Thumbnail de video" class="background-image">
+                        <div class="overlay-text">
+                            <h3>estilos de vida saludable</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Los estilos de vida saludables como aliado durante un diagnostico del VPH</p>
+                        <a href="https://youtu.be/ifjf2JnHDvU?si=BcwVqm06SCFXj91c" class="video-link">Ver video en YouTube</a>
+                    </div>
+                </div>
+                <div class="card empty-card card-video">
+                    <div class="card-header">
+                        <img src="{{ url_for('static', filename='img/vacuna.jpg') }}" alt="Thumbnail de video" class="background-image">
+                        <div class="overlay-text">
+                            <h3>¿Por qué NO EXISTE la VACUNA contra el VIH/SIDA?</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>El SIDA es una enfermedad que ya se ha cobrado más de 30 millones de vidas en todo el mundo, pero la vacuna contra el virus ...</p>
+                        <a href="https://youtu.be/UioIV8duu3w?si=S-6f4NTVP_OeUNut" class="video-link">Ver video en YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dia-vih-sida section-container">
+            <div class="dia-content-wrapper">
+                <div class="dia-image-area">
+                    <img src="{{ url_for('static', filename='img/Lazo-rojo.jpeg') }}" alt="Lazo Rojo de la Lucha contra el VIH" class="dia-image">
+                </div>
+                <div class="dia-main-text-area">
+                    <span class="dia-date">1 de Diciembre</span>
+                    <h2 class="dia-title">DÍA MUNDIAL DE LA LUCHA CONTRA EL VIH.</h2>
+                </div>
+            </div>
+            </section>
+    </main>
+
+    <footer>
+        </footer>
+</body>
+</html>
+{% endblock %}
